@@ -1,11 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface ICartItem {
   productId: string;
   quantity: number;
 }
+
+const LOCAL_KEY = "__COOL_CART_ITEMS";
+// TODO 后面修改成通过context注入cache服务
+const getLocalItems = () => {
+  const str = localStorage.getItem(LOCAL_KEY);
+  if (str) {
+    try {
+      return JSON.parse(str);
+    } catch (error) {
+      return [];
+    }
+  }
+  return [];
+};
+
 export function useCart() {
-  const [items, setItems] = useState<ICartItem[]>([]);
+  const [items, setItems] = useState<ICartItem[]>(getLocalItems());
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_KEY, JSON.stringify(items));
+  }, [items]);
 
   const add = (productId: string) => {
     let item = items.find((it) => (it.productId = productId));
