@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import getServiceToken from "src/tools/getServiceToken";
 
 interface ICartItem {
   productId: string;
@@ -19,7 +20,7 @@ const getLocalItems = () => {
   return [];
 };
 
-export function useCart() {
+export default function useCart() {
   const [items, setItems] = useState<ICartItem[]>(getLocalItems());
 
   useEffect(() => {
@@ -56,3 +57,4 @@ export function useCart() {
   return { items, add, subtract, remove };
 }
 
+export const CartService = getServiceToken(useCart)

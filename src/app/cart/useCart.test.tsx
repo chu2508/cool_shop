@@ -1,5 +1,5 @@
 import { render, fireEvent } from "@testing-library/react";
-import { useCart } from "./useCart";
+import useCart from "./useCart";
 
 const MockComp = () => {
   const { items, add, remove, subtract } = useCart();
