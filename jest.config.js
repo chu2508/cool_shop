@@ -9,6 +9,7 @@ module.exports = {
     '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
     '^.+\\.esm.js?$': 'ts-jest',
   },
+  testEnvironment: 'jsdom',
   rootDir: __dirname,
   setupFilesAfterEnv : [ '<rootDir>/setupTests.js' ],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json'],

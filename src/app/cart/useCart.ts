@@ -42,8 +42,8 @@ export function useCart() {
       item.quantity -= 1;
       if (item.quantity <= 0) {
         items.splice(idx, 1);
-        setItems([...items]);
       }
+      setItems([...items]);
     }
   };
   const remove = (productId) => {
@@ -55,3 +55,4 @@ export function useCart() {
   };
   return { items, add, subtract, remove };
 }
+
