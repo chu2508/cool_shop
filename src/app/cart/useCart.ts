@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import getServiceToken from "src/tools/getServiceToken";
+import getServiceToken from "../../tools/getServiceToken";
 
 interface ICartItem {
   productId: string;
@@ -57,4 +57,4 @@ export default function useCart() {
   return { items, add, subtract, remove };
 }
 
-export const CartService = getServiceToken(useCart)
+export const CartService = getServiceToken(useCart);
