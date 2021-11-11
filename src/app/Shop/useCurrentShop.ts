@@ -12,7 +12,7 @@ const fetcher = async () => {
   };
 };
 
-export default function useShop() {
+export default function useCurrentShop() {
   const { geolocation } = useContext(GeolocationService);
   const { data, error } = useSwr(
     geolocation ? ["/api/shop", geolocation] : null,
@@ -28,5 +28,11 @@ export default function useShop() {
     return;
   }, [geolocation, data]);
 
-  return { error, current: data, distance };
+  return {
+    error,
+    current: data,
+    distance,
+    geolocation,
+    loading: !data && !error,
+  };
 }
