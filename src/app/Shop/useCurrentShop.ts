@@ -8,7 +8,7 @@ const fetcher = async () => {
     id: "1",
     name: "光谷壹号店",
     location: { lon: 35.120011, lat: 24.11251 },
-    service: ["外卖", "预约自提"],
+    services: ["外卖", "预约自提"],
   };
 };
 
