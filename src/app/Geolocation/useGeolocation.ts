@@ -1,5 +1,5 @@
-import getGeolocation from "src/tools/getGeolocation";
-import getServiceToken from "src/tools/getServiceToken";
+import getGeolocation from "@src/tools/getGeolocation";
+import getServiceToken from "@src/tools/getServiceToken";
 import useSwr from "swr";
 
 export default function useGeolocation() {

@@ -1,12 +1,14 @@
+import { GeolocationService } from "@app/Geolocation/useGeolocation";
+import getDistance from "@src/tools/getDistance";
+import getServiceToken from "@src/tools/getServiceToken";
 import { useContext, useMemo } from "react";
-import getDistance from "src/tools/getDistance";
 import useSwr from "swr";
-import { GeolocationService } from "../Geolocation/useGeolocation";
 
 const fetcher = async () => {
   return {
     id: "1",
     name: "光谷壹号店",
+    address: "高新区高新路1号",
     location: { lon: 35.120011, lat: 24.11251 },
     services: ["外卖", "预约自提"],
   };
@@ -36,3 +38,5 @@ export default function useCurrentShop() {
     loading: !data && !error,
   };
 }
+
+export const CurrentShopService = getServiceToken(useCurrentShop);
