@@ -3,7 +3,8 @@
   justify-content: space-between;
   align-items: center;
   &__icon {
-    font-size: 40px;
+    font-size: 60px;
+    margin-right: 10px;
   }
   &__content {
     flex-grow: 1;
@@ -11,14 +12,15 @@
     line-height: 1.25;
   }
   &__title {
-    font-size: 16px;
+    font-size: 32px;
+    font-weight: bold;
   }
   &__subtitle {
-    font-size: 12px;
+    font-size: 24px;
     color: #afafaf;
   }
   &__extra {
-    font-size: 32px;
+    font-size: 48px;
     color: #afafaf;
   }
 }
