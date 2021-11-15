@@ -1,0 +1,13 @@
+.m-category {
+  height: 100vh;
+  display: flex;
+  &__menu {
+    width: 25%;
+    height: 100%;
+  }
+  &__content {
+    background: #fff;
+    flex: 1;
+    height: 100%;
+  }
+}

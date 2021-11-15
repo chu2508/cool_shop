@@ -1,0 +1,15 @@
+.m-slide_menu {
+  background: #e3e3e3;
+  &__item {
+    padding: 10px 20px;
+    font-size: 28upx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #666;
+    &.is-active {
+      color: #333;
+      background: white;
+    }
+  }
+}

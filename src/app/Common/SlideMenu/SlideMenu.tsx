@@ -1,6 +1,7 @@
-import { View } from "@tarojs/components";
+import { ScrollView, View } from "@tarojs/components";
 import classnames from "classnames";
 import { useEffect, useState } from "react";
+import "./SlideMenu.scss";
 
 export interface SlideMenuProps {
   dataSource: { key: string; name: string }[];
@@ -19,19 +20,27 @@ const SlideMenu = (props: SlideMenuProps) => {
   }, [activeIndex]);
 
   return (
-    <View className="m-slide_menu" >
+    <ScrollView scrollY className="m-slide_menu" style="height: 100%">
       {dataSource.map((item, idx) => {
         const className = classnames("m-slide_menu__item", {
-          "is-active": index === idx,
+          "is-active": index === idx
         });
-        const handleClick = () => props.onClickItem?.(item, idx);
+        const handleClick = () => {
+          setIndex(idx);
+          props.onClickItem?.(item, idx);
+        };
         return (
-          <View data-testid="item" key={idx} onClick={handleClick} className={className}>
+          <View
+            data-testid="item"
+            key={idx}
+            onClick={handleClick}
+            className={className}
+          >
             {item.name}
           </View>
         );
       })}
-    </View>
+    </ScrollView>
   );
 };
 
