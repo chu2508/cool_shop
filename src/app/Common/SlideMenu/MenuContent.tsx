@@ -1,4 +1,4 @@
-import { ScrollView } from "@tarojs/components";
+import { ScrollView, View } from "@tarojs/components";
 import { FC, ReactNode } from "react";
 import useScrollDirection from "./useScrollDirection";
 
@@ -9,7 +9,7 @@ const MenuContent: FC<MenuContentProps> = props => {
   const { direction, changeDirection } = useScrollDirection();
   return (
     <ScrollView
-      style={{ height: "100%" }}
+      style={{ height: "100%", width: '100%'}}
       scrollY
       onScroll={e => changeDirection(e.detail.scrollTop)}
     >

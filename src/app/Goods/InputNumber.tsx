@@ -1,5 +1,5 @@
 import { View, Text } from "@tarojs/components";
-import { BiPlus, BiCut } from "react-icons/bi";
+import { BiPlus, BiMinus } from "react-icons/bi";
 
 interface InputNumberProps {
   value?: number;
@@ -9,9 +9,9 @@ interface InputNumberProps {
 const InputNumber = (props: InputNumberProps) => {
   return (
     <View>
-      {props.value !== undefined && <BiPlus onClick={props.increment} />}
+      {props.value !== undefined && <BiMinus onClick={props.decrement} />}
       <Text>{props.value}</Text>
-      <BiCut onClick={props.decrement} />
+      <BiPlus onClick={props.increment} />
     </View>
   );
 };

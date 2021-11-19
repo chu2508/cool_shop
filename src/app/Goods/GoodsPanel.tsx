@@ -4,6 +4,7 @@ import IGoods from "src/typings/IGoods";
 import { CartService } from "../Cart/useCart";
 import InputNumber from "./InputNumber";
 import PriceDisplay from "./PriceDisplay";
+import "./GoodsPanel.scss";
 
 interface GoodsPanelProps {
   goods: IGoods;
@@ -12,6 +13,7 @@ const GoodsPanel = (props: GoodsPanelProps) => {
   const { goods } = props;
   const { add, getItem, subtract } = useContext(CartService);
   const item = getItem(goods.id);
+
   return (
     <View className="m-goods_panel">
       <Image className="m-goods_panel__cover" src={goods.coverPath} />

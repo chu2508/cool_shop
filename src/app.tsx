@@ -1,17 +1,13 @@
-import { Component } from "react";
+import { Component, FC } from "react";
 import "./app.scss";
+import useCart, { CartService } from "./app/Cart/useCart";
 
-class App extends Component {
-  componentDidMount() {}
-
-  componentDidShow() {}
-
-  componentDidHide() {}
-
-  componentDidCatchError() {}
-  render() {
-    return this.props.children;
-  }
-}
+const App: FC = props => {
+  return (
+    <CartService.Provider value={useCart()}>
+      {props.children}
+    </CartService.Provider>
+  );
+};
 
 export default App;

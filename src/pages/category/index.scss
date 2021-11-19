@@ -1,13 +1,16 @@
 .m-category {
   height: 100vh;
   display: flex;
+  width: 100%;
+  overflow-x: hidden;
   &__menu {
     width: 25%;
     height: 100%;
   }
   &__content {
+    overflow: hidden;
     background: #fff;
-    flex: 1;
     height: 100%;
+    width: 100%;
   }
 }
