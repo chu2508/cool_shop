@@ -28,7 +28,7 @@ export default function useCart() {
   }, [items]);
 
   const add = (productId: string) => {
-    let item = items.find((it) => (it.productId = productId));
+    let item = getItem(productId);
     if (item) {
       item.quantity += 1;
       setItems([...items]);
@@ -54,7 +54,9 @@ export default function useCart() {
       setItems([...items]);
     }
   };
-  return { items, add, subtract, remove };
+
+  const getItem = (id: string) => items.find(item => item.productId === id)
+  return { items, add, subtract, remove, getItem };
 }
 
 export const CartService = getServiceToken(useCart);

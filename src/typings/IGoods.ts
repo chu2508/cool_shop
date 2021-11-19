@@ -1,7 +1,8 @@
 export default interface IGoods {
+  describe: string;
   id: string;
   stock: number;
-  staticPrice: number;
+  stickPrice: number;
   salePrice: number;
   salesQuantity: number;
   name: string;
