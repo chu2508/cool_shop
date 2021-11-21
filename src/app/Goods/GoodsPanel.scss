@@ -1,0 +1,30 @@
+.m-goods_panel {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  &__cover {
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
+    flex-shrink: 0;
+  }
+  &__content {
+    overflow: hidden;
+    position: relative;
+  }
+  &__name{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  &__describe {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  &__action {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}

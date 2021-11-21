@@ -4,13 +4,16 @@ import useGeolocation, {
 import useCurrentShop, { CurrentShopService } from "@app/Shop/useCurrentShop";
 import React, { FC } from "react";
 import "./app.scss";
+import useCart, { CartService } from "./app/Cart/useCart";
 
 const ShopServiceWrap = getWrap(CurrentShopService, useCurrentShop);
 
 const App: FC = (props) => {
   return (
     <GeolocationService.Provider value={useGeolocation()}>
-      <ShopServiceWrap>{props.children}</ShopServiceWrap>
+      <CartService.Provider value={useCart()}>
+        <ShopServiceWrap>{props.children}</ShopServiceWrap>
+      </CartService.Provider>
     </GeolocationService.Provider>
   );
 };
