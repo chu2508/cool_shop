@@ -7,14 +7,14 @@ import "./app.scss";
 import useCart, { CartService } from "./app/Cart/useCart";
 
 const ShopServiceWrap = getWrap(CurrentShopService, useCurrentShop);
-
+const GeoWrap = getWrap(GeolocationService, useGeolocation)
 const App: FC = (props) => {
   return (
-    <GeolocationService.Provider value={useGeolocation()}>
+    <GeoWrap>
       <CartService.Provider value={useCart()}>
         <ShopServiceWrap>{props.children}</ShopServiceWrap>
       </CartService.Provider>
-    </GeolocationService.Provider>
+    </GeoWrap>
   );
 };
 export default App;

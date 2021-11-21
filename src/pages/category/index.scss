@@ -1,8 +1,21 @@
 .m-category {
   height: 100vh;
+  overflow: hidden;
   display: flex;
-  width: 100%;
-  overflow-x: hidden;
+  flex-direction: column;
+  &__top {
+    padding: 20px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    .m-top_shop {
+      margin-bottom: 20px;
+    }
+  }
+  &__main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
   &__menu {
     width: 25%;
     height: 100%;
